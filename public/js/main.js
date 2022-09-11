@@ -1,27 +1,27 @@
 const deleteBtn = document.querySelectorAll('.del')
-const todoItem = document.querySelectorAll('span.not')
-const todoComplete = document.querySelectorAll('span.completed')
+const placeItem = document.querySelectorAll('span.not')
+const placeVisited = document.querySelectorAll('span.visited')
 
 Array.from(deleteBtn).forEach((el)=>{
-    el.addEventListener('click', deleteTodo)
+    el.addEventListener('click', deletePlace)
 })
 
-Array.from(todoItem).forEach((el)=>{
-    el.addEventListener('click', markComplete)
+Array.from(placeItem).forEach((el)=>{
+    el.addEventListener('click', markVisited)
 })
 
-Array.from(todoComplete).forEach((el)=>{
-    el.addEventListener('click', markIncomplete)
+Array.from(placeComplete).forEach((el)=>{
+    el.addEventListener('click', marktoVisit)
 })
 
-async function deleteTodo(){
-    const todoId = this.parentNode.dataset.id
+async function deletePlace(){
+    const placeId = this.parentNode.dataset.id
     try{
         const response = await fetch('todos/deleteTodo', {
             method: 'delete',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
-                'todoIdFromJSFile': todoId
+                'placeIdFromJSFile': placeId
             })
         })
         const data = await response.json()
@@ -33,13 +33,13 @@ async function deleteTodo(){
 }
 
 async function markComplete(){
-    const todoId = this.parentNode.dataset.id
+    const placeId = this.parentNode.dataset.id
     try{
-        const response = await fetch('todos/markComplete', {
+        const response = await fetch('places/markVisited', {
             method: 'put',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
-                'todoIdFromJSFile': todoId
+                'placeIdFromJSFile': placeId
             })
         })
         const data = await response.json()
@@ -50,14 +50,14 @@ async function markComplete(){
     }
 }
 
-async function markIncomplete(){
-    const todoId = this.parentNode.dataset.id
+async function marktoVisit(){
+    const placeId = this.parentNode.dataset.id
     try{
-        const response = await fetch('todos/markIncomplete', {
+        const response = await fetch('places/marktoVisit', {
             method: 'put',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
-                'todoIdFromJSFile': todoId
+                'placeIdFromJSFile': placeId
             })
         })
         const data = await response.json()

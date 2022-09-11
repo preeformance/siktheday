@@ -1,16 +1,16 @@
 {
   "name": "todo-mvc-auth-local",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "npm start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Pree Robertson",
   "license": "MIT",
   "dependencies": {
-    "bcrypt": "^5.0.1",
+    "bcrypt": "^5.0.0",
     "connect-mongo": "^3.2.0",
     "dotenv": "^8.2.0",
     "ejs": "^3.1.6",

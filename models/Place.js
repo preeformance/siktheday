@@ -1,11 +1,11 @@
 const mongoose = require('mongoose')
 
-const TodoSchema = new mongoose.Schema({
-  todo: {
+const PlaceSchema = new mongoose.Schema({
+  place: {
     type: String,
     required: true,
   },
-  completed: {
+  visited: {
     type: Boolean,
     required: true,
   },
@@ -15,4 +15,4 @@ const TodoSchema = new mongoose.Schema({
   }
 })
 
-module.exports = mongoose.model('Todo', TodoSchema)
+module.exports = mongoose.model('Place', PlaceSchema)
