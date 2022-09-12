@@ -12,7 +12,7 @@
     <ul>
     <% places.forEach( el => { %>
             <li class='placeItem' data-id='<%=el._id%>'>
-                <span class='<%= el.completed === true ? 'visited' : 'not'%>'><%= el.todo %></span>
+                <span class='<%= el.visited === true ? 'visited' : 'not'%>'><%= el.todo %></span>
                 <span class='del'> Delete </span>
             </li>
     <% }) %>    
