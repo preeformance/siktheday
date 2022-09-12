@@ -10,6 +10,6 @@ router.post('/login', authController.postLogin)
 router.get('/logout', authController.logout)
 router.get('/signup', authController.getSignup)
 router.post('/signup', authController.postSignup)
-router.get('/favorites', authController.getFavorites)
+// router.get('/favorites', authController.getFavorites)
 
 module.exports = router
