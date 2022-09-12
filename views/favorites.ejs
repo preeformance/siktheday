@@ -8,17 +8,18 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Places</h1>
+    <h1>Favorites</h1>
     <ul>
     <% places.forEach( el => { %>
+        <% if(favorite){
             <li class='placeItem' data-id='<%=el._id%>'>
                 <span class='<%= el.visited === true ? 'visited' : 'not'%>'><%= el.place %></span>
                 <span class='del'> Delete </span>
             </li>
-    <% }) %>    
+    <%} }) %>    
     </ul>
 
-    <h2><%= user.userName %> has <%= left %> places left to visit.</h2>
+    <h2><%= user.userName %> has <%= left %> favorite places.</h2>
 
     <form action="/places/createPlace" method='POST'>
         <input type="date" name='placeDate' id=""dateEntryField>
