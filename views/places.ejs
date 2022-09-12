@@ -12,14 +12,19 @@
 
 
     <form action="/places/createPlace" method='POST'>
-        <input type="date" name='placeDate' id=""dateEntryField>
+        <label  for="placeDate">Date</label>
+        <input type="date" name='placeDate' id="dateEntryField">
         <input type="text" placeholder="Enter Place" name='placeName'>
         <input type="text" placeholder="Enter Location" name='placeLocation'>
-        <input type="range" min="0" max="5" name='placeAuthenticRating'>
-        <input type="range" min="0" max="5" name='placeAtmosphereRating'>
-        <input type="range" min="0" max="5" name='placeTasteRating'>
-        <input type="checkbox" id="favoritePlace" name="favoritePlace">
-        <input type="text" placeholder="Notes" name="placeNotes"> 
+        <label for="placeAuthenticRating">Authenticity</label>
+        <input type="range" min="0" max="5" step="0.1" name='placeAuthenticRating'>
+        <label for="placeAtmosphereRating">Atmosphere</label>
+        <input type="range" min="0" max="5" step="0.1" name='placeAtmosphereRating'>
+        <label for="placeTasteRating">Taste</label>
+        <input type="range" min="0" max="5" step="0.1" name='placeTasteRating'>
+        <label for="favoritePlace">Favorite?</label>
+        <input type="checkbox" id="favoritePlace" name="favoritePlace" checked="true" value="true">
+        <input type="text" placeholder="Add Notes" name="placeNotes"> 
         <input type="submit">
     </form>
 
@@ -37,6 +42,8 @@
         </thead>
 
         <tbody>
+
+            <!-- table -->
             <% places.forEach( el => { %>
                 <tr class="placeItem" data-id='<%=el._id%>'>
                     <td><%= el.placeDate.toLocaleDateString() %></td>

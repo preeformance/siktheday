@@ -32,6 +32,7 @@ const PlaceSchema = new mongoose.Schema({
   },
     favoritePlace: {
     type: Boolean,
+    default: false,
     required:false,
   },
     placeNotes: {
