@@ -16,7 +16,7 @@ const PlaceSchema = new mongoose.Schema({
   },
   placeAuthenticRating: {
     type: Number,
-    required: true,
+    required: false,
   },
   placeAtmosphereRating: {
     type: Number,

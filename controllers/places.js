@@ -13,7 +13,18 @@ module.exports = {
     },
     createPlace: async (req, res)=>{
         try{
-            await Place.create({place: req.body.placeItem, visited: false, userId: req.user.id})
+            const placeItem = req.body;
+            console.log(await Place.create({placeDate: placeItem.placeDate,
+                                            placeName: placeItem.placeName, 
+                                            placeLocation: placeItem.placeLocation,
+                                            placeAuthenticRating: placeItem.placeAuthenticRating,
+                                            placeAtmosphereRating: placeItem.placeAtmosphereRating,
+                                            placeTasteRating: placeItem.placeTasteRating,
+                                            favoritePlace: placeItem.favoritePlace,
+                                            placeNotes: placeItem.placeNotes, 
+                                            userId: req.user.id}))
+            
+            
             console.log('Place has been added!')
             res.redirect('/places')
         }catch(err){
