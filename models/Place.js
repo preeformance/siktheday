@@ -6,7 +6,7 @@ const PlaceSchema = new mongoose.Schema({
     required : true,
     default: Date.now
   },
-  placeItem: {
+  placeName: {
     type: String,
     required: true,
   },
@@ -28,7 +28,7 @@ const PlaceSchema = new mongoose.Schema({
   },
   visited: {
     type: Boolean,
-    required: true,
+    required: false,
   },
     favoritePlace: {
     type: Boolean,
