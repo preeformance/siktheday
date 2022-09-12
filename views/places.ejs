@@ -9,16 +9,7 @@
 </head>
 <body>
     <h1>Places</h1>
-    <ul>
-    <% places.forEach( el => { %>
-            <li class='placeItem' data-id='<%=el._id%>'>
-                <span class='<%= el.visited === true ? 'visited' : 'not'%>'><%= el.place %></span>
-                <span class='del'> Delete </span>
-            </li>
-    <% }) %>    
-    </ul>
 
-    <h2><%= user.userName %> has <%= left %> places left to visit.</h2>
 
     <form action="/places/createPlace" method='POST'>
         <input type="date" name='placeDate' id=""dateEntryField>
@@ -32,7 +23,35 @@
         <input type="submit">
     </form>
 
+    <table class="entry-table">
+        <thead>
+            <th>Date</th>
+            <th>Item</th>
+            <th>Company</th>
+            <th>Category</th>
+            <th>Amount</th>
+            <th></th>
+        </thead>
+
+        <tbody>
+            <% places.forEach( el => { %>
+                <tr class="placeItem" data-id='<%=el._id%>'>
+                    <td><%= el.placeDate.toLocaleDateString() %></td>
+                    <td><%= el.placeItem %></td>
+                    <td><%= el.placeLocation %></td>
+                    <td><%= el.placeAuthenticRating %></td>
+                    <td><%= el.placeAtmosphereRating %></td>
+                    <td><%= el.favoritePlace %></td>
+                    <td><%= el.placeNotes %></td>
+                    <td ><span class="del">delete</span></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+
     <a href="/logout">Logout</a>
+
+<!--     <h2><%= user.userName %> has <%= left %> places left to visit.</h2> -->
 
     <script src="js/main.js"></script>
 </body>
