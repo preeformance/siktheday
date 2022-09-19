@@ -54,3 +54,8 @@ h1{
 .not{
     text-decoration: underline;
 }
+@media(min-width: 768px){
+    .news-input{
+        width:50%;
+    }
+}
