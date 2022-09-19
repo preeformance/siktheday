@@ -44,15 +44,11 @@ $gradient-top-left: linear-gradient(225deg, #071e22ff, #f50010ff, #ffffffff, #1d
 $gradient-bottom-left: linear-gradient(315deg, #071e22ff, #f50010ff, #ffffffff, #1d7874ff, #0cce6bff);
 $gradient-radial: radial-gradient(#071e22ff, #f50010ff, #ffffffff, #1d7874ff, #0cce6bff);
 
-h1{
-    color: red;
-}
-.completed{
-    text-decoration: underline;
-    color: gray;
-}
-.not{
-    text-decoration: underline;
+
+body::before{
+    display: block;
+    content:'' ;
+    Height: 60px;
 }
 @media(min-width: 768px){
     .news-input{
