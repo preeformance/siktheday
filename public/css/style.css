@@ -1,54 +1,9 @@
-/* CSS HEX */
---dark-jungle-green: #071e22ff;
---red: #f50010ff;
---white: #ffffffff;
---myrtle-green: #1d7874ff;
---emerald: #0cce6bff;
-
-/* CSS HSL */
---dark-jungle-green: hsla(189, 66%, 8%, 1);
---red: hsla(356, 100%, 48%, 1);
---white: hsla(0, 0%, 100%, 1);
---myrtle-green: hsla(177, 61%, 29%, 1);
---emerald: hsla(149, 89%, 43%, 1);
-
-/* SCSS HEX */
-$dark-jungle-green: #071e22ff;
-$red: #f50010ff;
-$white: #ffffffff;
-$myrtle-green: #1d7874ff;
-$emerald: #0cce6bff;
-
-/* SCSS HSL */
-$dark-jungle-green: hsla(189, 66%, 8%, 1);
-$red: hsla(356, 100%, 48%, 1);
-$white: hsla(0, 0%, 100%, 1);
-$myrtle-green: hsla(177, 61%, 29%, 1);
-$emerald: hsla(149, 89%, 43%, 1);
-
-/* SCSS RGB */
-$dark-jungle-green: rgba(7, 30, 34, 1);
-$red: rgba(245, 0, 16, 1);
-$white: rgba(255, 255, 255, 1);
-$myrtle-green: rgba(29, 120, 116, 1);
-$emerald: rgba(12, 206, 107, 1);
-
-/* SCSS Gradient */
-$gradient-top: linear-gradient(0deg, #071e22ff, #f50010ff, #ffffffff, #1d7874ff, #0cce6bff);
-$gradient-right: linear-gradient(90deg, #071e22ff, #f50010ff, #ffffffff, #1d7874ff, #0cce6bff);
-$gradient-bottom: linear-gradient(180deg, #071e22ff, #f50010ff, #ffffffff, #1d7874ff, #0cce6bff);
-$gradient-left: linear-gradient(270deg, #071e22ff, #f50010ff, #ffffffff, #1d7874ff, #0cce6bff);
-$gradient-top-right: linear-gradient(45deg, #071e22ff, #f50010ff, #ffffffff, #1d7874ff, #0cce6bff);
-$gradient-bottom-right: linear-gradient(135deg, #071e22ff, #f50010ff, #ffffffff, #1d7874ff, #0cce6bff);
-$gradient-top-left: linear-gradient(225deg, #071e22ff, #f50010ff, #ffffffff, #1d7874ff, #0cce6bff);
-$gradient-bottom-left: linear-gradient(315deg, #071e22ff, #f50010ff, #ffffffff, #1d7874ff, #0cce6bff);
-$gradient-radial: radial-gradient(#071e22ff, #f50010ff, #ffffffff, #1d7874ff, #0cce6bff);
 
 
 body::before{
     display: block;
-    content:'' ;
-    Height: 60px;
+    content: '';
+    height: 50px;
 }
 @media(min-width: 768px){
     .news-input{
