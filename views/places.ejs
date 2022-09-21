@@ -1,61 +1,91 @@
 <%- include('partials/header') -%>
 <body>
-    <h1>Places</h1>
-
-
-    <form action="/places/createPlace" method='POST'>
-        <label  for="placeDate">Date</label>
-        <input type="date" name='placeDate' id="dateEntryField">
-        <input type="text" placeholder="Enter Place" name='placeName'>
-        <input type="text" placeholder="Enter Location" name='placeLocation'>
-        <label for="placeAuthenticRating">Authenticity</label>
-        <input type="range" min="0" max="5" step="0.1" name='placeAuthenticRating'>
-        <label for="placeAtmosphereRating">Atmosphere</label>
-        <input type="range" min="0" max="5" step="0.1" name='placeAtmosphereRating'>
-        <label for="placeTasteRating">Taste</label>
-        <input type="range" min="0" max="5" step="0.1" name='placeTasteRating'>
-        <label for="favoritePlace">Favorite?</label>
-        <input type="checkbox" id="favoritePlace" name="favoritePlace" checked="true" value="true">
-        <input type="text" placeholder="Add Notes" name="placeNotes"> 
-        <input type="submit">
+    <section class="bg-light text-dark p-4 text-left">
+    <div class="container">
+        <div class="align-items-center">
+         <h1>Places</h1>
+        </div>
+    </div>
+    </section>
+    <section class="p-2 mb-2 p-lg-0 bg-light">
+    <div class="container">
+    <div class="d-sm-flex align-items-center justy-content-between"> 
+        <div>
+        <h2>Add Somewhere New</h2>
+            <form class="row gy-2 gx-3 align-items-center" action="/places/createPlace" method='POST'>
+                <div class="col-auto">
+                    <label  for="placeDate">Date</label>
+                    <input type="date" name='placeDate' id="dateEntryField">
+                </div>
+                <div class="col-auto">
+                <input type="text" placeholder="Enter Place" name='placeName'>
+                </div>
+                <div class="col-auto">
+                <input type="text" placeholder="Enter Location" name='placeLocation'>
+                </div>
+                <div class="col-auto">
+                <label for="placeAuthenticRating">Authenticity</label>
+                <input type="range" min="0" max="5" step="0.1" name='placeAuthenticRating'>
+                </div>
+                <div class="col-auto">
+                <label for="placeAtmosphereRating">Atmosphere</label>
+                <input type="range" min="0" max="5" step="0.1" name='placeAtmosphereRating'>
+                </div>
+                <div class="col-auto">
+                <label for="placeTasteRating">Taste</label>
+                <input type="range" min="0" max="5" step="0.1" name='placeTasteRating'>
+                </div>
+                <div class="col-auto">
+                <input type="text" placeholder="Add Notes" name="placeNotes"> 
+                </div>
+                <div class="col-auto">
+                    <div class="form-check">
+                        <label for="favoritePlace">Favorite?</label>
+                        <input type="checkbox" id="favoritePlace" name="favoritePlace" checked="true" value="true">
+                    </div>
+                </div>
+                <div class="col-auto">
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
     </form>
-
-    <table class="entry-table">
-        <thead>
-            <th>Date</th>
-            <th>Name</th>
-            <th>Location</th>
-            <th>Authenticity</th>
-            <th>Atmosphere</th>
-            <th>Taste</th>
-            <th>Favorite?</th>
-            <th>Notes</th>
-            <th></th>
-        </thead>
-
-        <tbody>
-
-            <!-- table -->
-            <% places.forEach( el => { %>
-                <tr class="placeItem" data-id='<%=el._id%>'>
-                    <td><%= el.placeDate.toLocaleDateString() %></td>
-                    <td><%= el.placeName %></td>
-                    <td><%= el.placeLocation %></td>
-                    <td><%= el.placeAuthenticRating %></td>
-                    <td><%= el.placeAtmosphereRating %></td>
-                    <td><%= el.placeTasteRating %></td>
-                    <td><%= el.favoritePlace ? "yes" :"" %></td>
-                    <td><%= el.placeNotes %></td>
-                    <td ><span class="del">delete</span></td>
-                </tr>
-            <% }) %>
-        </tbody>
-    </table>
-
-    <a href="/logout">Logout</a>
-
-<!--     <h2><%= user.userName %> has <%= left %> places left to visit.</h2> -->
-
+    </div>
+    <img class="img-fluid w-50 d-none d-sm-block" src="/images/undraw_special_event_-4-aj8.svg" alt="people eating food">
+</div>
+</div>
+</section>
+<section class="bg-primary p-3">
+    <div class="container">
+    <h2 class="pb-2 text-light text-center">My Reviews</h2>
+    </div>
+    </section>
+<section class="bg-dark">
+    <div class="container">
+    <div class="row g-4" >
+        <% places.forEach( el => { %>
+    <div class="col-md">   
+    <div class="card border-primary mb-3">
+        <div class="card-header">
+            <%=el.placeDate.toLocaleDateString() %>
+        </div>
+        <div class="card-body">
+        <h5 class="card-title"><%= el.placeName %></h5>
+        <p class="card-text"><%= el.placeLocation %></p>
+        <p class="card-text"><%= el.placeNotes %></p>
+        </div>
+        <ul class="list-group list-group-flush">
+        <li class="list-group-item"> Authenticity: <%= el.placeAuthenticRating %></li>
+        <li class="list-group-item">Atmosphere: <%= el.placeAtmosphereRating %></li>
+        <li class="list-group-item">Taste: <%= el.placeTasteRating %></li>
+        </ul>
+        <div class="card-body">
+        <a href="#" class="card-link del text-primary">delete</a>
+    </div>
+    </div>
+    </div>
+        <% }) %>
+</div>
+</div>
+</section>
     <script src="js/main.js"></script>
 </body>
 </html>
