@@ -1,7 +1,10 @@
 const Contact = require('../models/Contact')
 
-module.exports = {
 
+module.exports = {
+    getContact: (req,res)=>{
+        res.render('contact.ejs')
+    }
     createContactNote: async (req, res)=>{
         try{
             const contactNoteItem = req.body;
