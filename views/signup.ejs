@@ -1,17 +1,58 @@
 <%- include('partials/header') -%>
 <body>
+    <section class="bg-dark text-light p-5">
     <% if (locals.messages.errors) { %>
         <% messages.errors.forEach( el => { %>
             <div class="alert alert-danger"><%= el.msg %></div>
         <% }) %>    
     <% } %>
+    <div class="container">
+        <h1 class="text-light">Create an Account</h1>
     <form action="/signup" method="POST">
-        <input type="text" name="userName" placeholder="User Name">
-        <input type="email" name="email" placeholder="Email">
-        <input type="password" name="password" placeholder="Password">
-        <input type="password" name="confirmPassword" placeholder="Confirm Password">
-        <input type="submit">
+        <div class="row mb-3">
+            <label for="userName" class="col-sm-2 col-form-label">Username</label>
+            <div class="col-sm-10">
+            <input type="text" class="form-control" name="userName">
+        </div>
+        </div>
+        <div class="row mb-3">
+            <label for="email" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" name="email">
+
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="password" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" name="password">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="confirmPassword" class="col-sm-2 col-form-label">Confirm Password</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" name="confirmPassword">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
     </form>
+</div>
+</section>
+<section class="bg-light text-dark p-5">
+    <div class="contaoner">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-md">
+              <img src="/images/undraw_tasting_re_3k5a.svg" class="img-fluid" alt="People tasting food and rating it">
+            </div>
+            <div class="col-md p-5">
+              <h2>Thanks for joining us!</h2>
+              <p class="lead">
+               You're one step closer to finding your next favorite restaurant.
+              </p>
+            </div>
+          </div>
+    </div>
+</section>
 </body>
 </html>
 <%- include('partials/footer') -%>
