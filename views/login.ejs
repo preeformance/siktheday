@@ -10,11 +10,51 @@
             <div class="alert alert-danger"><%= el.msg %></div>
         <% }) %>    
     <% } %>
-    <form action="/login" method="POST">
-        <input type="email" name="email" placeholder="Email">
-        <input type="password" name="password" placeholder="Password">
-        <input type="submit">
-    </form>
+    <section class="bg-dark text-light p-5">
+        <% if (locals.messages.errors) { %>
+            <% messages.errors.forEach( el => { %>
+                <div class="alert alert-danger"><%= el.msg %></div>
+            <% }) %>    
+        <% } %>
+        <div class="container">
+            <h1 class="text-light">Log In</h1>
+        <form action="/login" method="POST">
+            <div class="row mb-3">
+                <label for="email" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" name="email">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="password" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" name="password">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+    </div>
+    </section>
+    <section class="bg-light text-dark p-5">
+        <div class="contaoner">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md p-5">
+                    <h2>Welcome Back!</h2>
+                    <p class="lead">
+                     We hope you've been to some epic places since your last visit.
+                    </p>
+                    <p>Don't have an account yet?</p>
+                    <a href="/signup" class="btn btn-light align-items-left">
+                        <i class="bi bi-chevron-right"></i>Sign Up
+                      </a>
+                  </div>
+                <div class="col-md">
+                  <img src="/images/undraw_tasting_re_3k5a.svg" class="img-fluid" alt="People tasting food and rating it">
+                </div>
+              </div>
+        </div>
+    </section>
+
 </body>
 </html>
 <%- include('partials/footer') -%>
