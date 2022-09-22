@@ -1,0 +1,72 @@
+<%- include('partials/header') -%>
+<body>
+    <section class="bg-dark text-light p-5">
+    <% if (locals.messages.errors) { %>
+        <% messages.errors.forEach( el => { %>
+            <div class="alert alert-danger"><%= el.msg %></div>
+        <% }) %>    
+    <% } %>
+    <div class="container">
+        <h1 class="text-light">Contact Us</h1>
+    <form action="/contact" method="POST">
+        <div class="row mb-3">
+            <label for="contactName" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+            <input type="text" class="form-control" name="contactName">
+        </div>
+        </div>
+        <div class="row mb-3">
+            <label for="contactEmail" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" name="contactEmail">
+
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="contactType" class="col-sm-2 col-form-label">Choose a category:</label>
+            <div class="btn-group dropend">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  (choose category)
+                </button>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-item">Question</li>
+                  <li class="dropdown-item">Comment</li>
+                  <li class="dropdown-item">Complaint</li>
+                  <li class="dropdown-item">Idea</li>
+                </ul>
+              </div>
+                <input type="text" class="form-control" name="contactType">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="contactNote" class="col-sm-2 col-form-label">Message:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="contactNote">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>
+</section>
+<section class="bg-light text-dark p-5">
+    <div class="contaoner">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-md">
+              <img src="/images/undraw_tasting_re_3k5a.svg" class="img-fluid" alt="People tasting food and rating it">
+            </div>
+            <div class="col-md p-5">
+              <h2>Thanks for joining us!</h2>
+              <p class="lead">
+               You're one step closer to finding your next favorite restaurant.
+              </p>
+              <p>Already have an account?</p>
+              <a href="/login" class="btn btn-light">
+                  <i class="bi bi-chevron-right"></i>Log In
+                </a>
+            </div>
+          </div>
+    </div>
+</section>
+</body>
+</html>
+<%- include('partials/footer') -%> 
