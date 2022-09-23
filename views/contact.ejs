@@ -8,51 +8,35 @@
     <% } %>
     <div class="container">
         <h1 class="text-light">Contact Us</h1>
-    <form action="/contact" method="POST">
-        <div class="row mb-3">
+    <form action="/contact/createContactNote" method="POST">
+        <div class="row mb-3 form-group">
             <label for="contactName" class=" form-label">Name</label>
             <div class="col-sm-5">
                 <input type="text" class="form-control" name="contactName">
             </div>
             </div>
-        <div class="row mb-3">
+        <div class="row mb-3 form-group">
             <label for="contactEmail" class=" form-label">Email</label>
             <div class="col-sm-5">
                 <input type="email" class="form-control" name="contactEmail">
 
             </div>
         </div>
-        <div class="row mb-3">
-            <label for="contactType" class=" form-label">Type</label>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="question" id="question" checked>
-                <label class="form-check-label" for="question">
-                  Question
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="comment" id="comment">
-                <label class="form-check-label" for="comment">
-                  Comment
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="idea" id="idea">
-                <label class="form-check-label" for="idea">
-                  Idea
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="suggestion" id="suggestion">
-                <label class="form-check-label" for="suggestion">
-                  Suggestion
-                </label>
-              </div>
+        <div class="row mb-3 form-group">
+            <label for="contactType" class=" form-label">Choose Category</label>
+            <div class="col-sm-5"> 
+            <select class="form-control" id="contactType">
+                    <option>Question</option>
+                    <option>Comment</option>
+                    <option>Idea</option>
+                    <option>Suggestion</option>
+                  </select>
+                </div>
         </div>
-        <div class="row mb-3">
+        <div class="row mb-3 form-group">
             <label for="contactNote" class=" form-label">Message</label>    
          <div class="col-sm-10">   
-            <input type="text" class="form-control" name="contactNote">
+            <textarea class="form-control" name="contactNote" rows="3"></textarea>
         </div>
     </div>
         <button type="submit" class="btn btn-success">Submit</button>

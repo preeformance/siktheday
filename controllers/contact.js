@@ -8,10 +8,10 @@ module.exports = {
     createContactNote: async (req, res)=>{
         try{
             const contactNoteItem = req.body;
-            console.log(await Contact.create({contactDate:              contactNoteItem.contacDate,
-                                            contactName:                contactNoteItem.contacName, 
-                                            contactEmail:            contactNoteItem.contactEmail,
-                                            contactType:     contactNoteItem.contactType,
+            console.log(await Contact.create({
+                                            contactName:    contactNoteItem.contactName, 
+                                            contactEmail:   contactNoteItem.contactEmail,
+                                            contactType:    contactNoteItem.contactType,
                                             contactNote:    contactNoteItem.contactNote }))
             
             
