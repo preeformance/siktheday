@@ -11,6 +11,7 @@ router.get('/logout', authController.logout)
 router.get('/signup', authController.getSignup)
 router.post('/signup', authController.postSignup)
 router.get('/profile', authController.getProfile)
+router.get('/selector', authController.getSelector)
 // router.get('/favorites', authController.getFavorites)
 
 module.exports = router
