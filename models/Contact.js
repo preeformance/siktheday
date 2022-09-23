@@ -1,11 +1,11 @@
 const mongoose = require('mongoose')
 
 const ContactSchema = new mongoose.Schema({
-  contactDate: {
-    type: Date,
-    required : true,
-    default: Date.now
-  },
+  // contactDate: {
+  //   type: Date,
+  //   required : true,
+  //   default: Date.now
+  // },
   contactName: {
     type: String,
     required: true,
@@ -16,11 +16,11 @@ const ContactSchema = new mongoose.Schema({
   },
   contactType: {
     type: String,
-    required: false,
+    required: true,
   },
   contactNote: {
     type: String,
-    required: false,
+    required: true,
   }
 })
 

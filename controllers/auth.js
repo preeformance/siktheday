@@ -94,3 +94,11 @@ const User = require('../models/User')
       })
     })
   }
+
+  exports.getProfile = (req, res) => {
+    if (req.user) {
+      return res.render('/profile')
+    }
+    res.redirect('/index')
+    }
+  
