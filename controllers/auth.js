@@ -1,5 +1,6 @@
 const passport = require('passport')
 const validator = require('validator')
+const Place = require('../models/Place')
 const User = require('../models/User')
 
  exports.getLogin = (req, res) => {
@@ -96,9 +97,11 @@ const User = require('../models/User')
   }
 
 
-  exports.getProfile = (req, res) => {
+  exports.getProfile = async (req, res) => {
     if (req.user) {
-      return res.render('profile')
+      const ratingsNum = await Place.countDocuments({userId:req.user.id})
+      const placeItems = await Place.find({userId:req.user.id})
+      return res.render('profile', {places: placeItems, ratings: ratingsNum, user: req.user})
     }
     res.redirect('signup', {
       title: 'Create Account'

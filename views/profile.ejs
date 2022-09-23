@@ -1,6 +1,6 @@
 <%- include('partials/header') -%>
 <body>
-    <section class="bg-dark text-light p-4 text-left">
+    <section class="bg-light text-dark p-4 text-left">
     <div class="container">
         <div class="align-items-center">
          <h1>Profile</h1>
@@ -9,20 +9,34 @@
     <div class="container p-2">
         <h2>My Info</h2>
         <div class="p-2">
-        <p>Username: </p>
-        <p>Email: </p>
+        <p>Username: <%= user.userName %></p>
+        <p>Email: <%= user.email %> </p>
         </div>
     </div>
 </section>
-    <section class="bg-light text-dark p-4">
+    <section class="bg-dark text-light p-4">
     <div class="container">
+        <!-- variables for averages -->
+<% let authAvg = 0 %>
+<% for (let i=0; i<places.length; i++){ %>
+<%   authAvg += places[i].placeAuthenticRating %>
+<% }%>
+<% let atmAvg = 0 %>
+<% for (let i=0; i<places.length; i++){ %>
+<%   atmAvg += places[i].placeAtmosphereRating %>
+<% }%>
+<% let tasteAvg = 0 %>
+<% for (let i=0; i<places.length; i++){ %>
+<%   tasteAvg += places[i].placeTasteRating %>
+<% }%>
     <h2> My Ratings</h2>
     <div class="p-2">
-        <p>Total ratings: </p>
-        <p>Average authenticity rating: </p>
-        <p>Average atmosphere rating: </p>
-        <p>Average taste rating: </p>
+        <p>Total ratings: <%= ratings %> </p>
+        <p>Average Authenticity Rating: <%= (authAvg/ratings).toFixed(1) %> </p>
+        <p>Average Atmosphere Rating: <%= (atmAvg/ratings).toFixed(1) %> </p>
+        <p>Average Taste Rating: <%= (tasteAvg/ratings).toFixed(1) %> </p>
     </div>
+
     <div class="p-2">
     <a href="/places" class="btn btn-success btn-lg">Lists</a>
     </div>
