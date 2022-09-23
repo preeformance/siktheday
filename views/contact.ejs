@@ -25,12 +25,30 @@
         <div class="row mb-3 form-group">
             <label for="contactType" class=" form-label">Choose Category</label>
             <div class="col-sm-5"> 
-            <select class="form-control" id="contactType">
-                    <option>Question</option>
-                    <option>Comment</option>
-                    <option>Idea</option>
-                    <option>Suggestion</option>
-                  </select>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="contactType" id="question" value="question" checked>
+                    <label class="form-check-label" for="question">
+                      Question
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="contactType" id="comment" value="comment">
+                    <label class="form-check-label" for="comment">
+                      Comment
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="contactType" id="suggestion" value="suggestion">
+                    <label class="form-check-label" for="suggestion">
+                      Suggestion
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="contactType" id="complaint" value="complaint">
+                    <label class="form-check-label" for="complaint">
+                      Complaint
+                    </label>
+                  </div>
                 </div>
         </div>
         <div class="row mb-3 form-group">
