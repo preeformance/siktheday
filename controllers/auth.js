@@ -95,13 +95,22 @@ const User = require('../models/User')
       })
     })
   }
-
-
+ 
   exports.getProfile = async (req, res) => {
     if (req.user) {
       const ratingsNum = await Place.countDocuments({userId:req.user.id})
       const placeItems = await Place.find({userId:req.user.id})
       return res.render('profile', {places: placeItems, ratings: ratingsNum, user: req.user})
+    }
+    res.redirect('signup', {
+      title: 'Create Account'
+    })
+  }
+  exports.getSelector = async (req, res) => {
+    if (req.user) {
+      const faveCount = await Place.countDocuments({userId:req.user.id, favoritePlace: true})
+      const favePlaces = await Place.find({userId:req.user.id, favoritePlace: true})
+      return res.render('selector', {faveNum: faveCount, faves: favePlaces, user: req.user})
     }
     res.redirect('signup', {
       title: 'Create Account'
