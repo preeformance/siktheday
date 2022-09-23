@@ -95,10 +95,13 @@ const User = require('../models/User')
     })
   }
 
+
   exports.getProfile = (req, res) => {
     if (req.user) {
-      return res.render('/profile')
+      return res.render('profile')
     }
-    res.redirect('/index')
-    }
+    res.redirect('signup', {
+      title: 'Create Account'
+    })
+  }
   
