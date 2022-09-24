@@ -102,7 +102,7 @@ const User = require('../models/User')
       const placeItems = await Place.find({userId:req.user.id})
       return res.render('profile', {places: placeItems, ratings: ratingsNum, user: req.user})
     }
-    res.redirect('signup', {
+    res.render('signup', {
       title: 'Create Account'
     })
   }
@@ -112,7 +112,7 @@ const User = require('../models/User')
       const favePlaces = await Place.find({userId:req.user.id, favoritePlace: true})
       return res.render('selector', {faveNum: faveCount, faves: favePlaces, user: req.user})
     }
-    res.redirect('signup', {
+    res.render('signup', {
       title: 'Create Account'
     })
   }
