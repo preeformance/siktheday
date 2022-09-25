@@ -1,5 +1,23 @@
 <%- include('partials/header') -%>
 <body>
+  <!-- Modal -->
+<div class="modal fade" id="newsletterModal" tabindex="-1" aria-labelledby="newsletterModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="newsletterModalLabel">Sign up for our newsletter</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Submission successful! Thanks for joining!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Hero Section -->
       <section class="bg-dark text-light p-4 p-lg-0 pt-5 text-center text-sm-start">
         <div class="container">
         <div class="d-sm-flex align-items-center justify-content-between">
@@ -15,7 +33,7 @@
         </div>
         </div>
       </section> 
-
+<!-- Newsletter Sign Up -->
       <section class="bg-primary text-light p-5">
         <div class="container">
           <div class="d-md-flex justify-content-between align-items-center">
@@ -32,7 +50,7 @@
             />
           </div>
             <div class="col-auto">
-            <button class="btn btn-dark btn-lg " type="submit" id="button-addon2">Submit</button>
+            <button class="btn btn-dark btn-lg " type="button" id="button-addon2" data-bs-toggle="modal" data-bs-target="#newsletterModal">Submit</button>
           </div>
           </form>
           </div>
