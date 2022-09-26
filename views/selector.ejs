@@ -9,8 +9,12 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <% let randomNumber = Math.floor((Math.random() * faveNum))%>
-          You should go to <%= faves[randomNumber].placeName %>!! 
+            <% let randomNumber = Math.floor((Math.random() * faveNum) )%>
+         <%if (faveNum>0){%>
+          You should go to <%= faves[randomNumber].placeName %>!!
+          <%} else { %>
+         You need to add favorites to use the Selector!
+         <% } %>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
