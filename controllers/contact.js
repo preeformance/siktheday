@@ -3,7 +3,7 @@ const Contact = require('../models/Contact')
 
 module.exports = {
     getContact: (req,res)=>{
-        res.render('contact.ejs')
+        res.render('contact.ejs', {user: req.user})
     },
     createContactNote: async (req, res)=>{
         try{

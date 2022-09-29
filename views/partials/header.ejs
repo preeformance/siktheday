@@ -45,18 +45,27 @@
        
         <div class="collapse navbar-collapse" id="navmenu">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a href="/profile" class="nav-link">Profile</a>
+            <% if (!user) { %>
+              <li class="nav-item">
+                  <a href="/login" class="nav-link">Login</a>
+              </li>
+              <li class="nav-item">
+                <a href="/signup" class="nav-link btn btn-success text-dark">Signup</a>
             </li>
-            <li class="nav-item">
-              <a href="/places" class="nav-link">Lists</a>
-            </li>
-            <li class="nav-item">
-              <a href="/selector" class="nav-link">Selector</a>
-            </li>
-            <li class="nav-item">
-              <a href="/logout" class="nav-link">Log Out</a>
-            </li>
+            <% } else { %>
+              <li class="nav-item">
+                <a href="/profile" class="nav-link">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a href="/places" class="nav-link">Lists</a>
+              </li>
+              <li class="nav-item">
+                <a href="/selector" class="nav-link">Selector</a>
+              </li>
+              <li class="nav-item">
+                  <a href="/logout" class="nav-link">Logout</a>
+              </li>
+              <% } %> 
           </ul>
         </div>
       </nav>
