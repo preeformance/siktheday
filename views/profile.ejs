@@ -32,10 +32,23 @@
 <% }%>
     <h2> My Ratings</h2>
     <div class="p-3">
-        <p>Total ratings: <%= ratings %> </p>
-        <p>Average Authenticity Rating: <%= (authAvg/ratings).toFixed(1) %> </p>
-        <p>Average Atmosphere Rating: <%= (atmAvg/ratings).toFixed(1) %> </p>
-        <p>Average Taste Rating: <%= (tasteAvg/ratings).toFixed(1) %> </p>
+        <p><strong> Total Ratings: </strong><%= ratings %> </p>
+        <p> <strong>Average Authenticity Rating: </strong><% if(ratings<1){%>
+                (must submit rating to get averages)
+                <%} else { %>
+                  <%=  (authAvg/ratings).toFixed(1) %>
+                <%}%>
+        </p>
+        <p> <strong> Average Atmosphere Rating:</strong>  <% if(ratings<1){%>
+            (must submit rating to get averages)
+            <%} else { %>
+              <%=  (atmAvg/ratings).toFixed(1) %>
+            <%}%></p>
+        <p><strong>Average Taste Rating: </strong><% if(ratings<1){%>
+            (must submit rating to get averages)
+            <%} else { %>
+              <%=  (tasteAvg/ratings).toFixed(1) %>
+            <%}%> </p>
     </div>
 
     <div class="p-3">
