@@ -15,28 +15,28 @@
             <form class="row gy-2 gx-3 align-items-center" action="/places/createPlace" method='POST'>
                 <div class="col-auto">
                     <label  for="placeDate">Date</label>
-                    <input type="date" name='placeDate' id="dateEntryField" aria-label="date">
+                    <input type="date" name='placeDate' id="dateEntryField" aria-label="date" required="required">
                 </div>
                 <div class="col-auto">
-                <input type="text" placeholder="Enter Place" name='placeName' aria-label="place">
+                <input type="text" placeholder="Enter Place" name='placeName' aria-label="place" required="required">
                 </div>
                 <div class="col-auto">
-                <input type="text" placeholder="Enter Location" name='placeLocation' aria-label="location">
+                <input type="text" placeholder="Enter Location" name='placeLocation' aria-label="location" required="required">
                 </div>
                 <div class="col-auto">
                 <label for="placeAuthenticRating">Authenticity</label>
-                <input type="range" min="0" max="5" step="0.1" name='placeAuthenticRating' aria-label="autenticity rating">
+                <input type="range" min="0" max="5" step="0.1" name='placeAuthenticRating' aria-label="autenticity rating" required="required">
                 </div>
                 <div class="col-auto">
                 <label for="placeAtmosphereRating">Atmosphere</label>
-                <input type="range" min="0" max="5" step="0.1" name='placeAtmosphereRating' aria-label="atmosphere rating">
+                <input type="range" min="0" max="5" step="0.1" name='placeAtmosphereRating' aria-label="atmosphere rating" required="required">
                 </div>
                 <div class="col-auto">
                 <label for="placeTasteRating">Taste</label>
-                <input type="range" min="0" max="5" step="0.1" name='placeTasteRating' aria-label="taste rating">
+                <input type="range" min="0" max="5" step="0.1" name='placeTasteRating' aria-label="taste rating" required="required">
                 </div>
                 <div class="col-auto">
-                <input type="text" placeholder="Add Notes" name="placeNotes" aria-label="notes"> 
+                <input type="text" placeholder="Add Notes" name="placeNotes" aria-label="notes" required="required"> 
                 </div>
                 <div class="col-auto">
                     <div class="form-check">
