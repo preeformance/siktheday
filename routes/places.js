@@ -11,6 +11,6 @@ router.put('/visited', placesController.markVisited)
 
 router.put('/toVisit', placesController.marktoVisit)
 
-router.delete('/deletePlace', placesController.deletePlace)
+router.delete('/deletePlace/:id', placesController.deletePlace)
 
 module.exports = router

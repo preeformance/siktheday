@@ -17,7 +17,7 @@ Array.from(placeItem).forEach((el)=>{
 async function deletePlace(){
     const placeId = this.parentNode.dataset.id
     try{
-        const response = await fetch('todos/deleteTodo', {
+        const response = await fetch('places/deletePlace', {
             method: 'delete',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({

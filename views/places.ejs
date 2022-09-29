@@ -62,7 +62,7 @@
     <div class="container">
     <div class="row g-4" >
         <% places.forEach( el => { %>
-    <div class="col-sm">   
+    <div class="col-sm p-3">   
     <div class="card border-primary mb-3">
         <div class="card-header">
             <%=el.placeDate.toLocaleDateString() %>
@@ -78,7 +78,9 @@
         <li class="list-group-item">Taste: <%= el.placeTasteRating %></li>
         </ul>
         <div class="card-body">
-        <a href="#" class="card-link del text-primary">delete</a>
+        <form 
+        action="/places/deletePlace/<%= places.id %>?_method=DELETE"
+        method="POST" class="card-link del text-primary">delete</form>
     </div>
     </div>
     </div>
