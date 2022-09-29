@@ -15,28 +15,28 @@
             <form class="row gy-2 gx-3 align-items-center" action="/places/createPlace" method='POST'>
                 <div class="col-auto">
                     <label  for="placeDate">Date</label>
-                    <input type="date" name='placeDate' id="dateEntryField">
+                    <input type="date" name='placeDate' id="dateEntryField" aria-label="date">
                 </div>
                 <div class="col-auto">
-                <input type="text" placeholder="Enter Place" name='placeName'>
+                <input type="text" placeholder="Enter Place" name='placeName' aria-label="place">
                 </div>
                 <div class="col-auto">
-                <input type="text" placeholder="Enter Location" name='placeLocation'>
+                <input type="text" placeholder="Enter Location" name='placeLocation' aria-label="location">
                 </div>
                 <div class="col-auto">
                 <label for="placeAuthenticRating">Authenticity</label>
-                <input type="range" min="0" max="5" step="0.1" name='placeAuthenticRating'>
+                <input type="range" min="0" max="5" step="0.1" name='placeAuthenticRating' aria-label="autenticity rating">
                 </div>
                 <div class="col-auto">
                 <label for="placeAtmosphereRating">Atmosphere</label>
-                <input type="range" min="0" max="5" step="0.1" name='placeAtmosphereRating'>
+                <input type="range" min="0" max="5" step="0.1" name='placeAtmosphereRating' aria-label="atmosphere rating">
                 </div>
                 <div class="col-auto">
                 <label for="placeTasteRating">Taste</label>
-                <input type="range" min="0" max="5" step="0.1" name='placeTasteRating'>
+                <input type="range" min="0" max="5" step="0.1" name='placeTasteRating' aria-label="taste rating">
                 </div>
                 <div class="col-auto">
-                <input type="text" placeholder="Add Notes" name="placeNotes"> 
+                <input type="text" placeholder="Add Notes" name="placeNotes" aria-label="notes"> 
                 </div>
                 <div class="col-auto">
                     <div class="form-check">

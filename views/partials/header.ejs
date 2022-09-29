@@ -38,6 +38,7 @@
           type="button" 
           data-bs-toggle="collapse"
           data-bs-target="#navmenu"
+          aria-label="menu"
           >
      
          <span class="navbar-toggler-icon"></span>
@@ -46,7 +47,7 @@
         <div class="collapse navbar-collapse" id="navmenu">
           <ul class="navbar-nav ms-auto">
             <% if (!user) { %>
-              <li class="nav-item">
+              <li class="nav-item px-2">
                   <a href="/login" class="nav-link">Login</a>
               </li>
               <li class="nav-item">
