@@ -56,7 +56,7 @@ module.exports = {
     deletePlace: async (req, res)=>{
         console.log(req.body.placeIdFromJSFile)
         try{
-            await Place.findOneAndDelete({_id:req.body.placeIdFromJSFile})
+            await Place.findById({_id:req.params.id})
             console.log('Deleted Place')
             res.json('Deleted It')
         }catch(err){
