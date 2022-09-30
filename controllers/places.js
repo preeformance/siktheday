@@ -31,34 +31,35 @@ module.exports = {
             console.log(err)
         }
     },
-    // markVisited: async (req, res)=>{
-    //     try{
-    //         await Place.findOneAndUpdate({_id:req.body.placeIdFromJSFile},{
-    //             completed: true
-    //         })
-    //         console.log('Marked Visited')
-    //         res.json('Marked Visited')
-    //     }catch(err){
-    //         console.log(err)
-    //     }
-    // },
-    // marktoVisit: async (req, res)=>{
-    //     try{
-    //         await Place.findOneAndUpdate({_id:req.body.placeIdFromJSFile},{
-    //             completed: false
-    //         })
-    //         console.log('Marked toVisit')
-    //         res.json('Marked toVisit')
-    //     }catch(err){
-    //         console.log(err)
-    //     }
-    // },
+    markVisited: async (req, res)=>{
+        try{
+            await Place.findOneAndUpdate({_id:req.body.placeIdFromJSFile},{
+                completed: true
+            })
+            console.log('Marked Visited')
+            res.json('Marked Visited')
+        }catch(err){
+            console.log(err)
+        }
+    },
+    marktoVisit: async (req, res)=>{
+        try{
+            await Place.findOneAndUpdate({_id:req.body.placeIdFromJSFile},{
+                completed: false
+            })
+            console.log('Marked toVisit')
+            res.json('Marked toVisit')
+        }catch(err){
+            console.log(err)
+        }
+    },
     deletePlace: async (req, res)=>{
         console.log(req.params.id)
         try{
             await Place.findById({_id:req.params.id})
+            await Place.deleteOne({ _id: req.params.id });
             console.log('Deleted Place')
-            res.json('Deleted It')
+            res.redirect('/places')
         }catch(err){
             console.log(err)
         }
