@@ -14,6 +14,15 @@ module.exports = {
     createPlace: async (req, res)=>{
         try{
             const placeItem = req.body;
+            const validationErrors =[];
+            
+            if (placeItem.placeAuthenticRating > 5 || placeItem.placeAuthenticRating <0) validationErrors.push({msg: 'Your rating must be between 0 and 5.'});
+            if (placeItem.placeAtmosphereRating > 5 || placeItem.placeAtmosphereRating <0) validationErrors.push({msg: 'Your rating must be between 0 and 5.'});
+            if (placeItem.placeTasteRating > 5 || placeItem.placeTasteRating <0) validationErrors.push({msg: 'Your rating must be between 0 and 5.'});
+            if (validationErrors.length){
+                req.flash('errors', validationErrors);
+                return res.redirect('/places');
+            }
             console.log(await Place.create({placeDate: placeItem.placeDate,
                                             placeName: placeItem.placeName, 
                                             placeLocation: placeItem.placeLocation,
