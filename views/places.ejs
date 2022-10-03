@@ -64,8 +64,14 @@
         <% places.forEach( el => { %>
     <div class="col-sm p-3">   
     <div class="card border-primary mb-3">
-        <div class="card-header">
-            <%=el.placeDate.toLocaleDateString() %>
+        <div class="card-header ">
+            <%=el.placeDate.toLocaleDateString() %>         
+            <% if (el.favoritePlace == true){%>
+                <i class="bi bi-star-fill h3 text-success px-1"></i>
+           <% }else{%>
+            <i class="bi bi-star h3 text-dark px-1"></i>
+          <% } %> 
+  
         </div>
         <div class="card-body">
         <h5 class="card-title"><%= el.placeName %></h5>
