@@ -67,9 +67,9 @@
         <div class="card-header ">
             <%=el.placeDate.toLocaleDateString() %>         
             <% if (el.favoritePlace == true){%>
-                <i class="bi bi-star-fill h3 text-success px-1"></i>
+                <i class="bi bi-star-fill h3 text-success px-1" data-toggle="tooltip" data-placement="right" title="Favorite"></i>
            <% }else{%>
-            <i class="bi bi-star h3 text-dark px-1"></i>
+            <i class="bi bi-star h3 text-dark px-1" data-toggle="tooltip" data-placement="right" title="Not a Favorite"></i>
           <% } %> 
   
         </div>
