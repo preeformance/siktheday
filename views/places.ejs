@@ -61,6 +61,16 @@
 <section class="bg-dark">
     <div class="container">
     <div class="row g-4" >
+        <!-- variables for trophy-->
+            <% let top = "" %>
+            <% let highAvg = 0 %>
+        <!-- trophy logic -->
+          <% for(i=0; i<places.length; i++){%>
+            <% if ((places[i].placeAuthenticRating+places[i].placeAtmosphereRating+places[i].placeTasteRating)/3 > highAvg){ %>
+              <%  top = places[i].placeName %>
+              <% highAvg = (places[i].placeAuthenticRating+places[i].placeAtmosphereRating+places[i].placeTasteRating)/3 %>
+            <%}%>
+            <%}%>
         <% places.forEach( el => { %>
     <div class="col-sm p-3">   
     <div class="card border-primary mb-3">
@@ -71,7 +81,9 @@
            <% }else{%>
             <i class="bi bi-star h3 text-dark px-1" data-toggle="tooltip" data-placement="right" title="Not a Favorite"></i>
           <% } %> 
-  
+          <% if (el.placeName == top){%>
+            <i class="bi bi-trophy-fill h3 text-success px-1" data-toggle="tooltip" data-placement="right" title="Top Overall Favorite"></i>
+       <% } %>
         </div>
         <div class="card-body">
         <h5 class="card-title"><%= el.placeName %></h5>
