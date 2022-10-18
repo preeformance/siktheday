@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "npm start": "nodemon server.js",
-    "test": "mocha"
+    "test": "mocha",
+    "cypress:open": "cypress open"
   },
   "author": "Pree Robertson",
   "license": "MIT",
@@ -28,6 +29,7 @@
     "validator": "^13.6.0"
   },
   "devDependencies": {
+    "cypress": "^10.10.0",
     "mocha": "^10.0.0"
   }
 }
