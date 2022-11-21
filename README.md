@@ -7,7 +7,7 @@ This app lets you rate restaurants and keep track of which ones rock.The Selecto
 
 ## How It's Made:
 
-**Tech used:** MongoDB, Express, Node, Javascript, Bootstrap, HTML, CSS
+**Tech used:** MongoDB, Express, Node, Javascript, Bootstrap, HTML, CSS, SASS
 
 
 ## Optimizations
