@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "server.js": "node server.js"
+    "server.js": "node server.js",
     "test": "mocha",
     "cypress:open": "cypress open"
   },
