@@ -1,7 +1,7 @@
 # Sik the Day
 This app lets you rate restaurants and keep track of which ones rock.The Selector feature will help you choose where to eat based on your favorites. 
 
-**Link to project:** https://siktheday.herokuapp.com/
+**Link to project:** https://siktheday.cyclic.app
 
 ![Feature Demo](public/images/selectordemo.gif)
 
