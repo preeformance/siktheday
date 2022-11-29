@@ -1,7 +1,7 @@
 {
-  "name": "todo-mvc-auth-local",
-  "version": "0.0.2",
-  "description": "",
+  "name": "SIKTHEDAY",
+  "version": "1.0.2",
+  "description": "restaurant rating app",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
