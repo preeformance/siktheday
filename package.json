@@ -4,6 +4,7 @@
   "description": "restaurant rating app",
   "main": "server.js",
   "scripts": {
+    "start": "nodemon server.js",
     "test": "mocha",
     "cypress:open": "cypress open"
   },
