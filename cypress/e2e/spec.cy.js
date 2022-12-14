@@ -1,4 +1,4 @@
-describe("My First Test", () => {
+describe("Test 1", () => {
   it("gets, types and asserts", () => {
     cy.visit("https://example.cypress.io");
 
